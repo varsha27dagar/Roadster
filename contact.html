@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h2>ROADSTER</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+    <div class="form">
+      <h4>Contact Us!</h4>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email address"
+            required
+          />
+        </div>
+
+        <div class="col-12">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="3"
+            placeholder="Enter your message"
+            required
+          ></textarea>
+        </div>
+
+        <div class="col-12">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            onclick="if (allRequiredFieldsFilled()) { alert('Thanks For Contacting Us!'); }"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      function allRequiredFieldsFilled() {
+        var nameInput = document.getElementById("name");
+        var phoneInput = document.getElementById("phone");
+        var emailInput = document.getElementById("email");
+        var messageInput = document.getElementById("message");
+
+        if (
+          nameInput.value === "" ||
+          phoneInput.value === "" ||
+          emailInput.value === "" ||
+          messageInput.value === ""
+        ) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
